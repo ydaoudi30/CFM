@@ -1,0 +1,31 @@
+<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+<img src="https://www.cfm.fr/assets/Uploads/Home/Illuminating-Home-Page-image.jpg" width="1600px" height="370px">
+    <div class="content">
+      <div class="content__container">
+            <p class="content__container__text">
+            </p>
+              <ul class="content__container__list">
+                <li class="content__container__list__item">Bienvenue chez CFM!</li>
+                <li class="content__container__list__item">Il est {{hour}} h et {{minutes}} minutes.</li>
+                <div *ngIf="contactData.length == 0; then content1 else content2"></div>
+                    <ng-template #content1>
+                      <li class="content__container__list__item">Vous n'avez aucun contact.</li>
+                      <li class="content__container__list__item">Commencez à en ajouter!</li>
+                    </ng-template>
+                    <ng-template #content2>
+                      <div *ngIf="contactData.length == 1; then content3 else content4"></div>
+                    <ng-template #content3>
+                      <li class="content__container__list__item">Vous n'avez qu'un contact.</li>
+                      <li class="content__container__list__item">Essayez d'en ajouter plus!</li>
+                    </ng-template>
+                    <ng-template #content4>
+                      <li class="content__container__list__item">Vous avez {{contactData.length}} contacts.</li>
+                      <li class="content__container__list__item">Bonne journée!</li>
+                    </ng-template>
+                    </ng-template>
+              </ul>
+      </div>
+    </div>
+        
+               
+  

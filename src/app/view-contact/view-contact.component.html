@@ -1,0 +1,13 @@
+<div class="container-fluid page">
+    <div class="page__box p-3 mt-2">{{myPost.name}} {{myPost.surname}}</div>
+    <div class="page__content shadow p-3 position-relative"></div>
+    <div class="page__content-data position-absolute text-center">
+        <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" width="200" height="200">
+        <br>
+        <div *ngFor="let i of myPost.address">
+            <b>Adresse: {{i.id}}</b>
+            <p>{{i.numero}}, {{i.type}} {{i.rue}}, {{i.codepst}}, {{i.ville}}, {{i.pays}} <br>
+                Commentaire: {{i.commentaire}}</p>
+        </div>
+    </div>
+</div>

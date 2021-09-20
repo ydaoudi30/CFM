@@ -1,1 +1,30 @@
+
 /* You can add global styles to this file, and also import other style files */
+
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,700&display=swap');
+@import "~ag-grid-community/dist/styles/ag-grid.css";
+@import "~ag-grid-community/dist/styles/ag-theme-balham.css";
+
+$primary: rgb(111, 0, 255);
+
+body{
+    margin: 0;
+    font-family: 'Nunito', 'sans-serif';
+}
+
+.container{
+    width: 80%;
+    margin: 0 auto;
+}
+
+header{
+    background: $primary;
+    padding: 1em 0;
+
+    a{
+        color: white;
+        text-decoration: none;
+    }
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

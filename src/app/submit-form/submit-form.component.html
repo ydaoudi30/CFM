@@ -1,0 +1,80 @@
+<div class="container-fluid page">
+    <div class="page__box p-3 mt-2">Ajouter un contact</div>
+        <div class="content text-center" >
+        <form [formGroup]="myForm">
+            <mat-form-field>
+                <input matInput placeholder="Nom" formControlName="name">
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <input matInput placeholder="Prénom" formControlName="surname">
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <input matInput placeholder="Date de naissance" formControlName="birthday">
+            </mat-form-field>
+            <br><br>
+            <button mat-raised-button color="primary"
+            (click)="addAddress()"
+            matTooltip="Add a new address"><mat-icon>add</mat-icon>Nouvelle adresse</button>
+
+            <br><br>
+            <div *ngIf="myForm.get('address')['controls'].length > 0" formArrayName="address">
+        
+                <div *ngFor="let address of myForm.get('address')['controls']; let i=index" [formGroupName]="i">
+                    <mat-form-field>
+                        <input matInput placeholder="Identifiant" formControlName="id">
+                    </mat-form-field>
+                    <br>
+                    <mat-form-field>
+                        <input matInput placeholder="Numéro" formControlName="numero">
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input matInput placeholder="Type de voie" formControlName="type">
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input matInput placeholder="Rue" formControlName="rue">
+                    </mat-form-field>
+                    <br>
+                    <mat-form-field>
+                        <input matInput placeholder="Code postal" formControlName="codepst">
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input matInput placeholder="Ville" formControlName="ville">
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input matInput placeholder="Pays" formControlName="pays">
+                    </mat-form-field>
+                    <br>
+                    <mat-form-field style="width:220px !important">
+                        <input matInput placeholder="Téléphone" formControlName="telephone">
+                    </mat-form-field>
+                    <mat-form-field style="width:330px !important">
+                        <input matInput placeholder="Commentaire" formControlName="commentaire">
+                    </mat-form-field>
+                    <br>
+                    <button mat-raised-button color="warn"
+                    (click)="removeAddress(i)"
+                    matTooltip="Remove an address"><mat-icon>delete</mat-icon></button>
+                </div>
+        
+        
+            </div>
+            
+            <br>
+            
+            <div *ngIf="!myForm.valid; then content else other_content"></div>
+                <ng-template #content class="requis"><p class="requis">Certains champs sont requis.</p></ng-template>
+                <ng-template #other_content>
+                    <div *ngIf="myForm.get('address')['controls'].length  == 0; then content2 else validate"></div>
+                    <ng-template #content2 class="requis"><p class="requis">Au moins une adresse doit être saisie.</p></ng-template>
+                    <ng-template #validate class="requis"><p class="requis">
+                        <button mat-raised-button color="success" (click)="postContactDetails()" [disabled]="!myForm.valid"><mat-icon>check_circle</mat-icon> Valider</button></p>
+                    </ng-template>
+                </ng-template>
+        </form>
+    </div>
+        
+        
+    
+</div>

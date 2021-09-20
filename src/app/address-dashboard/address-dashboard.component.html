@@ -1,0 +1,21 @@
+<!--{{contactData[id-1] | json}}
+{{id}}-->
+<div class="container-fluid page">
+    <div class="page__box p-3 mt-2">Adresses de: {{contactData[id-1].name}} {{contactData[id-1].surname}}</div>
+    <div class="page__content shadow p-3 position-relative"></div>
+    <div class="page__content-data position-absolute text-center container-fluid">
+        <ag-grid-angular 
+        style="width:1220px; height:534px;" 
+        class="ag-theme-balham"
+        [columnDefs]="columnDefs"
+        (gridReady)="onGridReady($event)"
+        [rowHeight]="60"
+        position-relative
+        >
+        
+        </ag-grid-angular>
+
+    </div>
+</div>
+
+

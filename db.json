@@ -1,0 +1,34 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "name": "Daoudi",
+      "surname": "Yassine",
+      "birthday": "30/09/93",
+      "address": [
+        {
+          "id": "Au Maroc",
+          "type": "Lotissement",
+          "rue": "Nassim",
+          "numero": "8",
+          "ville": "Casablanca",
+          "codepst": "24200",
+          "pays": "Maroc",
+          "commentaire": "Cela fait 2 ans que je n'habite plus ici",
+          "telephone": ""
+        },
+        {
+          "id": "En France",
+          "type": "Rue",
+          "rue": "Blanqui",
+          "numero": "4",
+          "ville": "Ivry-sur-Seine",
+          "codepst": "94200",
+          "pays": "France",
+          "commentaire": "",
+          "telephone": "0666472734"
+        }
+      ]
+    }
+  ]
+}
